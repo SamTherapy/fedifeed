@@ -12,7 +12,7 @@ The homepage has a tool for generating iframe code for you, with a sensible `san
 
 ### V2
 
-#### GET `/apiv2/feed`
+#### GET `/api/v2/feed`
 
 > example: `/api/feed?userurl=https%3A%2F%2Foctodon.social%2Fusers%2Ffenwick67&scale=90&theme=light`
 

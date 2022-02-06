@@ -40,7 +40,7 @@ app.get('/api/feed',cors(),logger,function(req,res){
 
 	var userUrl = feedUrl.replace(/\.atom.*/i,'');
 
-	var redirectUrl = '/apiv2/feed?';
+	var redirectUrl = '/api/v2/feed?';
 	var qs = ['userurl='+encodeURIComponent(userUrl),"api=v1"];
 
 	(['size','theme','boosts','replies']).forEach(key=>{
@@ -53,9 +53,9 @@ app.get('/api/feed',cors(),logger,function(req,res){
 
 });
 
-app.options('/apiv2/feed',cors());
-// http://localhost:8000/apiv2/feed?userurl=https%3A%2F%2Foctodon.social%2Fusers%2Ffenwick67
-app.get('/apiv2/feed',cors(),logger,function(req,res){
+app.options('/api/v2/feed',cors());
+// http://localhost:8000/api/v2/feed?userurl=https%3A%2F%2Foctodon.social%2Fusers%2Ffenwick67
+app.get('/api/v2/feed',cors(),logger,function(req,res){
 	
 	// get feed url
 	var userUrl = req.query.userurl;
