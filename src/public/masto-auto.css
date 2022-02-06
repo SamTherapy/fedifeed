@@ -169,7 +169,7 @@ html,
 body {
   font-weight: normal; }
 
-@media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: masto-dark) {
   html,
   body {
     background-color: #282c37;

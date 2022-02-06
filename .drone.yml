@@ -1,0 +1,20 @@
+kind: pipeline
+type: docker
+name: default
+
+steps:
+- name: dependencies
+  image: node
+  command: yarn
+
+- name: lint
+  image: node
+  commands:
+  - yarn lint
+  depends: [dependencies]
+
+- name: test
+  image: node
+  commands: 
+   - yarn test
+  depends: [lint]

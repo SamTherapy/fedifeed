@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="initial-scale=1">
-	<title>Mastofeed - embeddable Mastodon feeds</title>
+	<title>Fedifeed - embeddable ActivityPub feeds</title>
 	<link rel="stylesheet" href="./stylesheet.css">
 </head>
 
@@ -12,7 +12,7 @@
 	<div>
 		<h1>Mastofeed</h1>
 		<h4>Embedded Mastodon feeds for blogs etc.</h4>
-		<a href="https://github.com/fenwick67/mastofeed" class="cta button alt">Fork on Github <img
+		<a href="https://github.com/SamTherapy/fedifeed" class="cta button alt">Fork on Github <img
 				class="link-logo after" src="github-logo.svg" alt="Github Logo" data-reactid="19"></a><br>
 		<br>
 		<hr><br>
@@ -61,7 +61,7 @@
 		<h3>Live Preview:</h3>
 		<span class="iframe-contain">
 			<iframe id="frame" allowfullscreen sandbox="allow-top-navigation allow-scripts" width="400" height="800"
-				src="/api/v1/feed?userurl=https%3A%2F%2Fmastodon.social%2Fusers%2Fgargron&replies=false&boosts=true"></iframe>
+				src=""></iframe>
 		</span>
 		<br>
 	</div>
@@ -71,7 +71,9 @@
 				return document.getElementById(id).value;
 			}
 
-			var inUrl = 'https://' + val('urlin') + '/users/' + val('usernamein');
+			// var inUrl = 'https://' + val('urlin') + '/users/' + val('usernamein');
+			let user = val('usernamein');
+			let instance = "https://" + val('urlin');
 
 			var showBoosts = (!document.getElementById('hideboosts').checked).toString();
 			var showReplies = (!document.getElementById('hidereplies').checked).toString();
@@ -79,7 +81,7 @@
 			var portStr = (window.location.port && window.location.port != 80) ? (':' + window.location.port) : ''
 
 			var iframeUrl = window.location.protocol + '//' + window.location.hostname + portStr
-				+ "/api/v1/feed?userurl=" + encodeURIComponent(inUrl) + "&theme=" + val('theme') + '&size=' + val('size')
+				+ "/api/v1/feed?user=" + encodeURIComponent(user) + "&instance=" + encodeURIComponent(instance) + "&instance_type=" + "&theme=" + val('theme') + '&size=' + val('size')
 				+ "&header=" + showHeader + '&replies=' + showReplies + '&boosts=' + showBoosts;
 
 			document.getElementById('result').value = '<iframe allowfullscreen sandbox="allow-top-navigation allow-scripts" width="' + val('width') + '" height="' + val('height') + '" src="' + iframeUrl + '"></iframe>';
