@@ -10,8 +10,8 @@
 <body>
 	<br>
 	<div>
-		<h1>Mastofeed</h1>
-		<h4>Embedded Mastodon feeds for blogs etc.</h4>
+		<h1>Fedifeed</h1>
+		<h4>Embedded ActivityPub feeds for blogs etc.</h4>
 		<a href="https://github.com/SamTherapy/fedifeed" class="cta button alt">Fork on Github <img
 				class="link-logo after" src="github-logo.svg" alt="Github Logo" data-reactid="19"></a><br>
 		<br>
@@ -61,7 +61,7 @@
 		<h3>Live Preview:</h3>
 		<span class="iframe-contain">
 			<iframe id="frame" allowfullscreen sandbox="allow-top-navigation allow-scripts" width="400" height="800"
-				src=""></iframe>
+				src="/api/v1/feed?userurl=https%3A%2F%2Fmastodon.social%2Fusers%2Fgargron&replies=false&boosts=true">></iframe>
 		</span>
 		<br>
 	</div>
@@ -71,7 +71,6 @@
 				return document.getElementById(id).value;
 			}
 
-			// var inUrl = 'https://' + val('urlin') + '/users/' + val('usernamein');
 			let user = val('usernamein');
 			let instance = "https://" + val('urlin');
 

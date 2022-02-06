@@ -5,7 +5,8 @@ name: default
 steps:
 - name: dependencies
   image: node
-  command: yarn
+  commands:
+  - yarn
 
 - name: lint
   image: node
