@@ -2,7 +2,8 @@
 
 [![Build Status](https://ci.git.froth.zone/api/badges/Sam/fedifeed/status.svg)](https://ci.git.froth.zone/Sam/fedifeed)
 
-Embed an activitypub feed in your blog et cetera.
+Embed an activitypub feed in your blog et cetera. \
+This is a fork of [mastofeed](https://github.com/fenwick67/mastofeed) that adds support for more themes and Misskey.
 
 https://www.fedifeed.com
 
