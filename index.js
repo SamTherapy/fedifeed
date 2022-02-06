@@ -1,13 +1,10 @@
-var Express = require('express');
-// v1 api
-var convert = require('./lib/convert');
+import Express from 'express';
 // v2 api
-var convertv2 = require('./lib/convertv2');
-var serveStatic = require('serve-static');
-var request = require('request');
-var cors = require('cors');
-var errorPage = require('./lib/errorPage');
-var morgan = require('morgan');
+import convertv2 from './lib/convert.js';
+import serveStatic from 'serve-static';
+import cors from 'cors';
+import errorPage from './lib/errorPage.js';
+import morgan from 'morgan';
 
 var app = Express();
 
@@ -40,7 +37,7 @@ app.get('/api/feed',cors(),logger,function(req,res){
 
 	var userUrl = feedUrl.replace(/\.atom.*/i,'');
 
-	var redirectUrl = '/api/v2/feed?';
+	var redirectUrl = '/api/v1/feed?';
 	var qs = ['userurl='+encodeURIComponent(userUrl),"api=v1"];
 
 	(['size','theme','boosts','replies']).forEach(key=>{
@@ -53,9 +50,9 @@ app.get('/api/feed',cors(),logger,function(req,res){
 
 });
 
-app.options('/api/v2/feed',cors());
-// http://localhost:8000/api/v2/feed?userurl=https%3A%2F%2Foctodon.social%2Fusers%2Ffenwick67
-app.get('/api/v2/feed',cors(),logger,function(req,res){
+app.options('/api/v1/feed',cors());
+// http://localhost:8000/api/v1/feed?userurl=https%3A%2F%2Foctodon.social%2Fusers%2Ffenwick67
+app.get('/api/v1/feed',cors(),logger,function(req,res){
 	
 	// get feed url
 	var userUrl = req.query.userurl;

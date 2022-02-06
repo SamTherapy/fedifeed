@@ -1,15 +1,14 @@
 // do a test
 
 
-var fs = require('fs'),
-request = require('request'),
-    convert = require('../lib/convert')
+import { createReadStream, writeFileSync } from 'fs';
+import convert from '../lib/convert.js';
 
 	
-var r = fs.createReadStream('./test/sample.atom');
+var r = createReadStream('./test/sample.atom');
 	
 convert(r,function(er,data){
   if (er){return console.log('error: ',er)}
   console.log('ok');
-  fs.writeFileSync('./test/result.html',data,'utf8');
+  writeFileSync('./test/result.html',data,'utf8');
 })

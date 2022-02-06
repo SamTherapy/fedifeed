@@ -1,22 +1,24 @@
 {
   "dependencies": {
     "cors": "^2.8.5",
-    "ejs": "^2.5.8",
-    "express": "^4.16.4",
-    "feedparser": "^2.2.9",
-    "morgan": "^1.9.1",
-    "request": "^2.88.0",
+    "ejs": "^3.1.6",
+    "express": "^4.17.2",
+    "feedparser": "^2.2.10",
+    "morgan": "^1.10.0",
+    "got": "^12.0.1",
+    "request": "^2.88.2",
     "request-promise-cache": "^2.0.1",
-    "request-promise-native": "^1.0.7",
-    "serve-static": "^1.13.2",
-    "timeago.js": "^3.0.2"
+    "serve-static": "^1.14.2",
+    "timeago.js": "^4.0.2"
   },
   "main": "index.js",
+  "type": "module",
+  "license": "MIT",
   "scripts": {
     "start": "node index.js",
     "build-styles": "node build-styles.js"
   },
   "devDependencies": {
-    "node-sass": "^4.12.0"
+    "node-sass": "^7.0.1"
   }
 }
