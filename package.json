@@ -7,8 +7,6 @@
     "got": "^12.0.1",
     "megalodon": "^4.0.0",
     "morgan": "^1.10.0",
-    "request": "^2.88.2",
-    "request-promise-cache": "^2.0.1",
     "serve-static": "^1.14.2",
     "timeago.js": "^4.0.2",
     "typescript": "^4.5.5"

@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -5,13 +6,14 @@
 	<meta name="viewport" content="initial-scale=1">
 	<title>Fedifeed - embeddable ActivityPub feeds</title>
 	<link rel="stylesheet" href="./stylesheet.css">
+    <script src="./script.js" defer></script>
 </head>
 
 <body>
 	<br>
 	<div>
 		<h1>Fedifeed</h1>
-		<h4>Embedded ActivityPub feeds for blogs etc.</h4>
+		<h4>Embedded ActivityPub feeds for blogs, websites, etc.</h4>
 		<a href="https://github.com/SamTherapy/fedifeed" class="cta button alt">Fork on Github <img
 				class="link-logo after" src="github-logo.svg" alt="Github Logo" data-reactid="19"></a><br>
 		<br>
@@ -65,32 +67,6 @@
 		</span>
 		<br>
 	</div>
-	<script>
-		window.genUrl = function genUrl() {
-			function val(id) {
-				return document.getElementById(id).value;
-			}
-
-			let user = val('usernamein');
-			let instance = "https://" + val('urlin');
-
-			var showBoosts = (!document.getElementById('hideboosts').checked).toString();
-			var showReplies = (!document.getElementById('hidereplies').checked).toString();
-			var showHeader = document.getElementById('header').checked.toString()
-			var portStr = (window.location.port && window.location.port != 80) ? (':' + window.location.port) : ''
-
-			var iframeUrl = window.location.protocol + '//' + window.location.hostname + portStr
-				+ "/api/v1/feed?user=" + encodeURIComponent(user) + "&instance=" + encodeURIComponent(instance) + "&instance_type=" + "&theme=" + val('theme') + '&size=' + val('size')
-				+ "&header=" + showHeader + '&replies=' + showReplies + '&boosts=' + showBoosts;
-
-			document.getElementById('result').value = '<iframe allowfullscreen sandbox="allow-top-navigation allow-scripts" width="' + val('width') + '" height="' + val('height') + '" src="' + iframeUrl + '"></iframe>';
-
-			var iframe = document.getElementById('frame');
-			iframe.src = iframeUrl;
-			iframe.width = val('width');
-			iframe.height = val('height');
-		}
-	</script>
 </body>
 
 </html>

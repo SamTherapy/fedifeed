@@ -1,5 +1,7 @@
 # Fedifeed
 
+[![Build Status](https://ci.git.froth.zone/api/badges/Sam/fedifeed/status.svg)](https://ci.git.froth.zone/Sam/fedifeed)
+
 Embed an activitypub feed in your blog et cetera.
 
 https://www.fedifeed.com
