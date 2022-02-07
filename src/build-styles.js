@@ -2,15 +2,15 @@
 import { readFileSync, writeFileSync } from "fs";
 import { renderSync } from "node-sass";
 
-var staticDir = "./src/public/";
-var srcDir = "./src/stylesrc/";
-var themes = ["masto-light","masto-dark","masto-auto"];
+let staticDir = "./src/public/";
+let srcDir = "./src/stylesrc/";
+let themes = ["masto-light","masto-dark","masto-auto"];
 
 
 themes.forEach(function(s){
-    var sassFile = srcDir+s+".scss";
-    var cssFile = staticDir+s+".css";
-    var result = renderSync({
+    let sassFile = srcDir+s+".scss";
+    let cssFile = staticDir+s+".css";
+    let result = renderSync({
         data: readFileSync(sassFile,"utf8"),
         includePaths:[srcDir]
     });

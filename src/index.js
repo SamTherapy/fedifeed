@@ -59,7 +59,9 @@ app.get("/api/v1/feed", cors(), logger, async function(req, res) {
     if (type === "") {
         const user = req.query.user;
         const instance = req.query.instance;
-        let instanceType = await detector(instance);
+        let instanceType = await detector(instance).catch(() =>
+            ""
+        );
         if (instanceType === "mastodon" || instanceType === "pleroma") {
             userUrl = instance + "/users/" + user;
             type = instanceType;
@@ -67,8 +69,8 @@ app.get("/api/v1/feed", cors(), logger, async function(req, res) {
             userUrl = instance + "/@" + user;
             type = instanceType;
         } else {
-            res.status(400);
-            res.send(errorPage(400, "You need to specify a user URL"));
+            res.status(500);
+            res.send(errorPage(500, "You need to specify a user URL"));
             return;
         }
     } else { 

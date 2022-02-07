@@ -5,7 +5,7 @@ import { createReadStream, writeFileSync } from "fs";
 import convert from "../lib/convert.js";
 
 	
-var r = createReadStream("./test/sample.atom");
+let r = createReadStream("./test/sample.atom");
 	
 convert(r,function(er,data){
     if (er){return console.log("error: ",er);}
