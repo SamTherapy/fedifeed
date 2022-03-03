@@ -19,14 +19,14 @@ app.use(
 
 function doCache(res, durationSecs) {
     res.set({
-        "Cache-Control": "max-age="+durationSecs,
+        "Cache-Control": "max-age=" + durationSecs,
     });
 }
 
 
 // this just redirects to the
 app.options("/api/feed", cors());
-app.get("/api/feed", cors(), logger, function(req, res) {
+app.get("/api/feed", cors(), logger, function (req, res) {
     // get feed url
     const feedUrl = req.query.url;
     if (!feedUrl) {
@@ -38,11 +38,11 @@ app.get("/api/feed", cors(), logger, function(req, res) {
     const userUrl = feedUrl.replace(/\.atom.*/i, "");
 
     const redirectUrl = "/api/v1/feed?";
-    const qs = ["userurl="+encodeURIComponent(userUrl), "api=v1"];
+    const qs = [ "userurl=" + encodeURIComponent(userUrl), "api=v1" ];
 
-    (["size", "theme", "boosts", "replies"]).forEach((key)=>{
-        if (typeof req.query[key] != "undefined") {
-            qs.push(key+"="+encodeURIComponent(req.query[key]));
+    ([ "size", "theme", "boosts", "replies" ]).forEach((key) => {
+        if (typeof req.query[ key ] != "undefined") {
+            qs.push(key + "=" + encodeURIComponent(req.query[ key ]));
         }
     });
 
@@ -51,30 +51,28 @@ app.get("/api/feed", cors(), logger, function(req, res) {
 
 app.options("/api/v1/feed", cors());
 // http://localhost:8000/api/v1/feed?userurl=https%3A%2F%2Foctodon.social%2Fusers%2Ffenwick67
-app.get("/api/v1/feed", cors(), logger, async function(req, res) {
+app.get("/api/v1/feed", cors(), logger, async function (req, res) {
     // get feed url
     // userUrl
     let type = req.query.instance_type;
-    let userUrl = "";
-    if (type === "") {
+    let userUrl = req.query.userurl;
+    if (userUrl === "" || userUrl === undefined) {
         const user = req.query.user;
         const instance = req.query.instance;
-        let instanceType = await detector(instance).catch(() =>
-            ""
-        );
-        if (instanceType === "mastodon" || instanceType === "pleroma") {
+        if (type === "" || type === undefined) {
+            type = await detector(instance).catch(() =>
+                "",
+            );
+        }
+        if (type === "mastodon" || type === "pleroma")
             userUrl = instance + "/users/" + user;
-            type = instanceType;
-        } else if (instanceType === "misskey") {
+        else if (type === "misskey")
             userUrl = instance + "/@" + user;
-            type = instanceType;
-        } else {
-            res.status(500);
-            res.send(errorPage(500, "You need to specify a user URL"));
+        else {
+            res.status(400);
+            res.send(errorPage(400, "You need to specify a user URL"));
             return;
         }
-    } else { 
-        userUrl = req.query.userurl;
     }
 
     const feedUrl = req.query.feedurl;
@@ -127,6 +125,6 @@ app.get("/api/v1/feed", cors(), logger, async function(req, res) {
     });
 });
 
-app.listen(process.env.PORT || 8000, function() {
-    console.log("Server started, listening on "+(process.env.PORT || 8000));
+app.listen(process.env.PORT || 8000, function () {
+    console.log("Server started, listening on " + (process.env.PORT || 8000));
 });
