@@ -125,6 +125,6 @@ app.get("/api/v1/feed", cors(), logger, async function (req, res) {
     });
 });
 
-app.listen(process.env.PORT || 8000, function () {
+app.listen(process.env.PORT || 8000, "127.0.0.1", function () {
     console.log("Server started, listening on " + (process.env.PORT || 8000));
 });
