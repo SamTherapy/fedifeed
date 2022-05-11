@@ -3,19 +3,19 @@ type: docker
 name: default
 
 steps:
-- name: dependencies
-  image: node
-  commands:
-  - yarn
+  - name: dependencies
+    image: node
+    commands:
+      - yarn
 
-- name: lint
-  image: node
-  commands:
-  - yarn lint
-  depends: [dependencies]
+  - name: lint
+    image: node
+    commands:
+      - yarn lint:ci
+    depends: [dependencies]
 
-- name: test
-  image: node
-  commands: 
-   - yarn test
-  depends: [lint]
+  - name: test
+    image: node
+    commands:
+      - yarn test
+    depends: [lint]
