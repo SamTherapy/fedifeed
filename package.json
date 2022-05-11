@@ -13,7 +13,7 @@
   },
   "main": "index.js",
   "type": "module",
-  "license": "MIT",
+  "license": "GPL-3.0",
   "scripts": {
     "start": "yarn node index.js",
     "lint": "eslint --fix . && prettier --write .",
