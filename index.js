@@ -14,6 +14,7 @@ app.use(
     contentSecurityPolicy: false,
     crossOriginEmbedderPolicy: false,
     crossOriginResourcePolicy: false,
+    frameguard: false,
   })
 );
 
