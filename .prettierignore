@@ -1,2 +1,3 @@
 public/lib/infinite-scroll.pkgd.min.js
 .yarn/
+.pnp*
