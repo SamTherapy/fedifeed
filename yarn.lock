@@ -640,7 +640,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"debug@npm:4, debug@npm:^4.1.0, debug@npm:^4.1.1, debug@npm:^4.3.1, debug@npm:^4.3.2, debug@npm:^4.3.3":
+"debug@npm:4, debug@npm:^4.1.0, debug@npm:^4.1.1, debug@npm:^4.3.2, debug@npm:^4.3.3":
   version: 4.3.4
   resolution: "debug@npm:4.3.4"
   dependencies:
@@ -726,14 +726,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ejs@npm:3.1.7":
-  version: 3.1.7
-  resolution: "ejs@npm:3.1.7"
+"ejs@npm:3.1.8":
+  version: 3.1.8
+  resolution: "ejs@npm:3.1.8"
   dependencies:
     jake: ^10.8.5
   bin:
     ejs: bin/cli.js
-  checksum: fe40764af39955ce8f8b116716fc8b911959946698edb49ecab85df597746c07aa65d5b74ead28a1e2ffa75b0f92d9bedd752f1c29437da6137b3518271e988c
+  checksum: 1d40d198ad52e315ccf37e577bdec06e24eefdc4e3c27aafa47751a03a0c7f0ec4310254c9277a5f14763c3cd4bbacce27497332b2d87c74232b9b1defef8efc
   languageName: node
   linkType: hard
 
@@ -2344,7 +2344,7 @@ __metadata:
   resolution: "root-workspace-0b6124@workspace:."
   dependencies:
     cors: 2.8.5
-    ejs: 3.1.7
+    ejs: 3.1.8
     eslint: 8.15.0
     eslint-config-prettier: 8.5.0
     eslint-plugin-prettier: 4.0.0
@@ -2501,18 +2501,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"socks-proxy-agent@npm:^6.1.0":
-  version: 6.1.1
-  resolution: "socks-proxy-agent@npm:6.1.1"
-  dependencies:
-    agent-base: ^6.0.2
-    debug: ^4.3.1
-    socks: ^2.6.1
-  checksum: 9a8a4f791bba0060315cf7291ca6f9db37d6fc280fd0860d73d8887d3efe4c22e823aa25a8d5375f6079279f8dc91b50c075345179bf832bfe3c7c26d3582e3c
-  languageName: node
-  linkType: hard
-
-"socks-proxy-agent@npm:^6.1.1":
+"socks-proxy-agent@npm:^6.1.0, socks-proxy-agent@npm:^6.1.1":
   version: 6.2.0
   resolution: "socks-proxy-agent@npm:6.2.0"
   dependencies:
@@ -2523,7 +2512,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"socks@npm:^2.6.1, socks@npm:^2.6.2":
+"socks@npm:^2.6.2":
   version: 2.6.2
   resolution: "socks@npm:2.6.2"
   dependencies:
