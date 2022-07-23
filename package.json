@@ -5,7 +5,7 @@
     "ejs": "3.1.8",
     "express": "4.18.1",
     "feedparser": "2.2.10",
-    "helmet": "5.1.0",
+    "helmet": "5.1.1",
     "megalodon": "4.1.0",
     "morgan": "1.10.0",
     "serve-static": "1.15.0",
