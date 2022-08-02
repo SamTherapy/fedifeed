@@ -197,3 +197,15 @@ input[type="checkbox"]:not(:checked) ~ label::after {
 input[type="checkbox"]:not(:checked) ~ div {
   display: none;
 }
+
+img {
+  vertical-align: middle;
+}
+
+img .item-content {
+  margin: 0;
+}
+
+.item-content img {
+  margin: 0;
+}

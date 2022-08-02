@@ -11,7 +11,7 @@ window.genUrl = function genUrl() {
     .checked).toString();
   let showHeader = document.getElementById("header").checked.toString();
   let portStr =
-    window.location.port && window.location.port != 80
+    window.location.port && window.location.port !== 80
       ? ":" + window.location.port
       : "";
 
@@ -30,7 +30,7 @@ window.genUrl = function genUrl() {
   // Prettier, WHY
   document.getElementById(
     "result"
-  ).value = `<iframe allowfullscreen sandbox="allow-top-navigation allow-scripts" width="${val(
+  ).value = `<iframe title="Powered by Fedifeed" allowfullscreen sandbox="allow-top-navigation allow-scripts" width="${val(
     "width"
   )}" height="${val("height")}" src="${iframeUrl}"></iframe>`;
 

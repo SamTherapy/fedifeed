@@ -204,3 +204,11 @@ button:hover,
 a:hover {
   background-color: #394150;
 }
+
+img {
+  vertical-align: middle;
+}
+
+.item-content img {
+  margin: 0;
+}

@@ -12,7 +12,7 @@
     <br />
     <div>
       <h1>Fedifeed</h1>
-      <h4>Embedded ActivityPub feeds for blogs, websites, etc.</h4>
+      <h4>Embedded Mastodon/Pleroma/Misskey feeds for blogs, websites, etc.</h4>
       <a href="https://git.froth.zone/sam/fedifeed" class="cta button alt"
         >Fork on Gitea
         <img class="link-logo after" src="img/gitea-logo.svg" alt="Gitea Logo"
@@ -78,7 +78,7 @@
             <option value="auto-auto">
               auto-auto (depends on instance, automatic)
             </option>
-            <option value="auto-dark">
+            <option value="auto-dark" selected>
               auto-dark (depends on instance, use dark)
             </option>
             <option value="auto-light">
@@ -121,6 +121,7 @@
       <span class="iframe-contain">
         <iframe
           id="frame"
+          title="Powered by Fedifeed"
           allowfullscreen
           sandbox="allow-top-navigation allow-scripts"
           width="400"

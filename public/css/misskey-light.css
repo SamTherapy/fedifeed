@@ -214,3 +214,11 @@ html,
 body {
   font-weight: normal;
 }
+
+img {
+  vertical-align: middle;
+}
+
+.item-content img {
+  margin: 0;
+}

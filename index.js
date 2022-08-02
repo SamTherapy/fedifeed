@@ -6,17 +6,9 @@ import cors from "cors";
 import errorPage from "./lib/errorPage.js";
 import morgan from "morgan";
 import { detector } from "megalodon";
-import helmet from "helmet";
 
 const app = Express();
-app.use(
-  helmet({
-    contentSecurityPolicy: false,
-    crossOriginEmbedderPolicy: false,
-    crossOriginResourcePolicy: false,
-    frameguard: false,
-  })
-);
+app.disable("x-powered-by");
 
 const logger = morgan(":method :url :status via :referrer - :response-time ms");
 
@@ -44,13 +36,17 @@ app.get("/api/feed", cors(), logger, function (req, res) {
     return;
   }
 
-  const userUrl = feedUrl.replace(/\.atom.*/i, "");
+  let userUrl = "";
+
+  if (typeof feedUrl === "string") {
+    userUrl = feedUrl.replace(/\.atom.*/i, "");
+  }
 
   const redirectUrl = "/api/v1/feed?";
   const qs = ["userurl=" + encodeURIComponent(userUrl), "api=v1"];
 
   ["size", "theme", "boosts", "replies"].forEach((key) => {
-    if (typeof req.query[key] != "undefined") {
+    if (typeof req.query[key] !== "undefined") {
       qs.push(key + "=" + encodeURIComponent(req.query[key]));
     }
   });
@@ -64,78 +60,43 @@ app.get("/api/v1/feed", cors(), logger, async function (req, res) {
   // userUrl
   let type = req.query.instance_type;
   let userUrl = req.query.userurl;
-  if (userUrl === "" || userUrl === undefined) {
+  if (!userUrl) {
     const user = req.query.user;
     const instance = req.query.instance;
-    if (type === "" || type === undefined) {
+    if (!type) {
       type = await detector(instance).catch(() => "");
     }
-    if (type === "mastodon" || type === "pleroma")
-      userUrl = instance + "/users/" + user;
-    else if (type === "misskey") userUrl = instance + "/@" + user;
-    else {
-      res
-        .status(400)
-        .send(errorPage(400, "You need to specify a user URL", null));
-      return;
+    switch (type) {
+      case "mastodon":
+      case "pleroma":
+        userUrl = instance + "/users/" + user;
+        break;
+      case "misskey":
+        userUrl = instance + "/@" + user;
+        break;
+      default:
+        res
+          .status(400)
+          .send(errorPage(400, "You need to specify a user URL", null));
+        return;
     }
   }
 
   const feedUrl = req.query.feedurl;
 
   const opts = {};
-  if (req.query.size) {
-    opts.size = req.query.size;
-  }
-  if (req.query.theme) {
-    opts.theme = req.query.theme;
-    if (opts.theme === "auto-auto") {
-      switch (type) {
-        case "mastodon":
-          opts.theme = "masto-auto";
-          break;
-        case "pleroma":
-          opts.theme = "pleroma";
-          break;
-        case "misskey":
-          opts.theme = "misskey-auto";
-          break;
-        default:
-          break;
-      }
-    } else if (opts.theme === "auto-light") {
-      switch (type) {
-        case "mastodon":
-          opts.theme = "masto-light";
-          break;
-        case "misskey":
-          opts.theme = "misskey-light";
-          break;
-        case "pleroma":
-          opts.theme = "pleroma-light";
-          break;
-        default:
-          break;
-      }
-    } else if (opts.theme === "auto-dark") {
-      switch (type) {
-        case "mastodon":
-          opts.theme = "masto-dark";
-          break;
-        case "misskey":
-          opts.theme = "misskey-dark";
-          break;
-        case "pleroma":
-          opts.theme = "pleroma-dark";
-          break;
-        default:
-          break;
-      }
-    }
-  }
-  if (req.query.header) opts.header = req.query.header.toLowerCase() === "true";
-  if (req.query.boosts) opts.boosts = req.query.boosts.toLowerCase() === "true";
-  if (req.query.replies)
+  opts.size = req.query.size;
+
+  opts.theme = req.query.theme;
+
+  opts.theme = opts.theme.replace("auto-", `${type}-`);
+  opts.theme ??= "auto-auto";
+
+  if (typeof req.query.header === "string")
+    opts.header = req.query.header.toLowerCase() === "true";
+  if (typeof req.query.boosts === "string")
+    opts.boosts = req.query.boosts.toLowerCase() === "true";
+  if (typeof req.query.replies === "string")
     opts.replies = req.query.replies.toLowerCase() === "true";
   opts.instance_type = type;
   opts.userUrl = userUrl;
@@ -152,8 +113,26 @@ app.get("/api/v1/feed", cors(), logger, async function (req, res) {
         .status(500)
         .send(errorPage(500, null, { theme: opts.theme, size: opts.size }));
       // TODO log the error
-      console.error(er, er.stack);
+      console.error("error:", er, er.stack);
     });
+});
+
+// eslint-disable-next-line no-unused-vars
+app.use(function (req, res, _next) {
+  // respond with html page
+  if (req.accepts("html")) {
+    res.status(404).send("Not found");
+    return;
+  }
+
+  // respond with json
+  if (req.accepts("json")) {
+    res.status(404).json({ error: "Not found" });
+    return;
+  }
+
+  // default to plain-text. send()
+  res.status(404).type("txt").send("Not found");
 });
 
 app.listen(process.env.PORT || 8000, "127.0.0.1", function () {

@@ -426,3 +426,11 @@ body {
     display: none;
   }
 }
+
+img {
+  vertical-align: middle;
+}
+
+.item-content img {
+  margin: 0;
+}
