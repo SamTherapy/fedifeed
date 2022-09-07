@@ -23,7 +23,7 @@
     "eslint-config-prettier": "8.5.0",
     "eslint-plugin-prettier": "4.2.1",
     "prettier": "2.7.1",
-    "sass": "1.54.8"
+    "sass": "1.54.9"
   },
   "packageManager": "yarn@3.2.3"
 }
