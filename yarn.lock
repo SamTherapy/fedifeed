@@ -295,14 +295,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"axios@npm:1.1.0":
-  version: 1.1.0
-  resolution: "axios@npm:1.1.0"
+"axios@npm:1.1.2":
+  version: 1.1.2
+  resolution: "axios@npm:1.1.2"
   dependencies:
     follow-redirects: ^1.15.0
     form-data: ^4.0.0
     proxy-from-env: ^1.1.0
-  checksum: e26df8edaf953640b331638886725335ad57a3b786a13aa93c5ac33f7edfa691026c31d42e88defef5709196978c7a449a4c556937a63037b21216ab7b169b1e
+  checksum: 136c25a5031aa2845fdbda3006c36888bbe351b11d1195f1f898a23c5df1430febbdb1ad034a61f27967e83762d5b5a3e851fff8a363cb4badeb883f8ff21461
   languageName: node
   linkType: hard
 
@@ -2183,7 +2183,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "root-workspace-0b6124@workspace:."
   dependencies:
-    axios: 1.1.0
+    axios: 1.1.2
     cors: 2.8.5
     ejs: 3.1.8
     eslint: 8.24.0
