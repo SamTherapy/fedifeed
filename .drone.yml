@@ -6,16 +6,17 @@ steps:
   - name: dependencies
     image: node
     commands:
-      - yarn
+      - curl -L https://pnpm.js.org/pnpm.js | node - add --global pnpm@7
+      - pnpm i
 
   - name: lint
     image: node
     commands:
-      - yarn lint:ci
+      - npm run lint:ci
     depends: [dependencies]
 
   - name: test
     image: node
     commands:
-      - yarn test
+      - npm run test
     depends: [lint]
