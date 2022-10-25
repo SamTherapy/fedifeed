@@ -7,7 +7,7 @@ specifiers:
   eslint: 8.26.0
   eslint-config-prettier: 8.5.0
   eslint-plugin-prettier: 4.2.1
-  express: ^5.0.0-beta.1
+  express: '>=5.0.0-beta.1'
   megalodon: 4.1.0
   morgan: 1.10.0
   nodemon: 2.0.20
