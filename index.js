@@ -1,7 +1,6 @@
 import Express from "express";
 // v2 api
 import convertv2 from "./lib/convert.js";
-import serveStatic from "serve-static";
 import cors from "cors";
 import errorPage from "./lib/errorPage.js";
 import morgan from "morgan";
@@ -13,7 +12,7 @@ app.disable("x-powered-by");
 const logger = morgan(":method :url :status via :referrer - :response-time ms");
 
 app.use(
-  serveStatic("public", {
+  Express.static("public", {
     maxAge: "1d",
   })
 );
