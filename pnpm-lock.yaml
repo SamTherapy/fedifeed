@@ -7,7 +7,7 @@ specifiers:
   eslint-config-prettier: 8.5.0
   eslint-plugin-prettier: 4.2.1
   express: '>=5.0.0-beta.1'
-  megalodon: 4.1.0
+  megalodon: 4.1.1
   morgan: 1.10.0
   nodemon: 2.0.20
   prettier: 2.7.1
@@ -17,7 +17,7 @@ dependencies:
   cors: 2.8.5
   ejs: 3.1.8
   express: 5.0.0-beta.1
-  megalodon: 4.1.0
+  megalodon: 4.1.1
   morgan: 1.10.0
   timeago.js: 4.0.2
 
@@ -937,8 +937,8 @@ packages:
     engines: {node: '>= 0.6'}
     dev: false
 
-  /megalodon/4.1.0:
-    resolution: {integrity: sha512-NrhePOFPVSRrglyjUZk3F9N+HgkSaV0qCajL5In+zz9LuwocU9tNg/QIa+yIQ3LSjIqgOD0fnYH2unXzx+YN4Q==}
+  /megalodon/4.1.1:
+    resolution: {integrity: sha512-xMGB1HPJZuNyLF6nTISDa2Oi4RXpK30qXrCTwXDBCPXMTNJEjGkdBMp+XKtYJLB0Pq5Tx/GTqWXaI9WEtEALiA==}
     engines: {node: '>=15.0.0'}
     dependencies:
       '@types/oauth': 0.9.1
@@ -947,11 +947,11 @@ packages:
       dayjs: 1.11.6
       form-data: 4.0.0
       https-proxy-agent: 5.0.1
-      oauth: 0.9.15
+      oauth: 0.10.0
       object-assign-deep: 0.4.0
       socks-proxy-agent: 7.0.0
-      typescript: 4.7.4
-      uuid: 8.3.2
+      typescript: 4.8.4
+      uuid: 9.0.0
       ws: 8.5.0
     transitivePeerDependencies:
       - bufferutil
@@ -1054,8 +1054,8 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: true
 
-  /oauth/0.9.15:
-    resolution: {integrity: sha512-a5ERWK1kh38ExDEfoO6qUHJb32rd7aYmPHuyCu3Fta/cnICvYmgd2uhuKXvPD+PXB+gCEYYEaQdIRAjCOwAKNA==}
+  /oauth/0.10.0:
+    resolution: {integrity: sha512-1orQ9MT1vHFGQxhuy7E/0gECD3fd2fCC+PIX+/jgmU/gI3EpRocXtmtvxCO5x3WZ443FLTLFWNDjl5MPJf9u+Q==}
     dev: false
 
   /object-assign-deep/0.4.0:
@@ -1431,8 +1431,8 @@ packages:
       mime-types: 2.1.35
     dev: false
 
-  /typescript/4.7.4:
-    resolution: {integrity: sha512-C0WQT0gezHuw6AdY1M2jxUO83Rjf0HP7Sk1DtXj6j1EwkQNZrHAg2XPWlq62oqEhYvONq5pkC2Y9oPljWToLmQ==}
+  /typescript/4.8.4:
+    resolution: {integrity: sha512-QCh+85mCy+h0IGff8r5XWzOVSbBO+KfeYrMQh7NJ58QujwcE22u+NUSmUxqF+un70P9GXKxa2HCNiTTMJknyjQ==}
     engines: {node: '>=4.2.0'}
     hasBin: true
     dev: false
@@ -1457,8 +1457,8 @@ packages:
     engines: {node: '>= 0.4.0'}
     dev: false
 
-  /uuid/8.3.2:
-    resolution: {integrity: sha512-+NYs2QeMWy+GWFOEm9xnn6HCDp0l7QBD7ml8zLUmJ+93Q5NF0NocErnwkTkXVFNiX3/fpC6afS8Dhb/gz7R7eg==}
+  /uuid/9.0.0:
+    resolution: {integrity: sha512-MXcSTerfPa4uqyzStbRoTgt5XIe3x5+42+q1sDuy3R5MDk66URdLMOZe5aPX/SQd+kuYAh0FdP/pO28IkQyTeg==}
     hasBin: true
     dev: false
 
