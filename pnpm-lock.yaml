@@ -7,7 +7,7 @@ specifiers:
   eslint-config-prettier: 8.5.0
   eslint-plugin-prettier: 4.2.1
   express: '>=5.0.0-beta.1'
-  megalodon: 4.1.2
+  megalodon: 4.1.3
   morgan: 1.10.0
   nodemon: 2.0.20
   prettier: 2.8.0
@@ -17,7 +17,7 @@ dependencies:
   cors: 2.8.5
   ejs: 3.1.8
   express: 5.0.0-beta.1
-  megalodon: 4.1.2
+  megalodon: 4.1.3
   morgan: 1.10.0
   timeago.js: 4.0.2
 
@@ -937,8 +937,8 @@ packages:
     engines: {node: '>= 0.6'}
     dev: false
 
-  /megalodon/4.1.2:
-    resolution: {integrity: sha512-X00YkErxMdYDcNP2FD48Wan8rA4UWryHBVwd56OWNaI/pqFbPIMOcu7VWMnFuBojeOmEoEjQZeHH9V3zoCdJUw==}
+  /megalodon/4.1.3:
+    resolution: {integrity: sha512-nO7olR4tPGLbpfNAjiFtq4JxQS/6/pTmjk/kIYjMKbvIfwANjd5tFDxv6h9ekNjawkquS9sD5qyKaYrsfrrJOQ==}
     engines: {node: '>=15.0.0'}
     dependencies:
       '@types/oauth': 0.9.1
