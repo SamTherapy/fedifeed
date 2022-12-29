@@ -7,7 +7,7 @@ specifiers:
   eslint-config-prettier: 8.5.0
   eslint-plugin-prettier: 4.2.1
   express: '>=5.0.0-beta.1'
-  megalodon: 5.0.3
+  megalodon: 5.0.4
   morgan: 1.10.0
   nodemon: 2.0.20
   prettier: 2.8.1
@@ -17,7 +17,7 @@ dependencies:
   cors: 2.8.5
   ejs: 3.1.8
   express: 5.0.0-beta.1
-  megalodon: 5.0.3
+  megalodon: 5.0.4
   morgan: 1.10.0
   timeago.js: 4.0.2
 
@@ -183,8 +183,8 @@ packages:
     resolution: {integrity: sha512-Oei9OH4tRh0YqU3GxhX79dM/mwVgvbZJaSNaRk+bshkj0S5cfHcgYakreBjrHwatXKbz+IoIdYLxrKim2MjW0Q==}
     dev: false
 
-  /axios/1.2.1:
-    resolution: {integrity: sha512-I88cFiGu9ryt/tfVEi4kX2SITsvDddTajXTOFmt2uK1ZVA8LytjtdeyefdQWEf5PU8w+4SSJDoYnggflB5tW4A==}
+  /axios/1.2.2:
+    resolution: {integrity: sha512-bz/J4gS2S3I7mpN/YZfGFTqhXTYzRho8Ay38w2otuuDR322KzFIWm/4W2K6gIwvWaws5n+mnb7D1lN9uD+QH6Q==}
     dependencies:
       follow-redirects: 1.15.2
       form-data: 4.0.0
@@ -938,13 +938,13 @@ packages:
     engines: {node: '>= 0.6'}
     dev: false
 
-  /megalodon/5.0.3:
-    resolution: {integrity: sha512-7ZPoDLmLj78FdlQVy5YwWd320Be9jQ3IoLHyYJNP2ttS9O3mof3sZ0rW1+GCXv9Qev4AN66A7xHYxY26H8EiXQ==}
+  /megalodon/5.0.4:
+    resolution: {integrity: sha512-mys03A3vFAwuj/7KrAytk2kIz3lc02DbLSjDF/lxYf1BDqGGA2lwAqgYwws194flyvhZbLiUDzZ73KuZxHy6GQ==}
     engines: {node: '>=15.0.0'}
     dependencies:
       '@types/oauth': 0.9.1
       '@types/ws': 8.5.3
-      axios: 1.2.1
+      axios: 1.2.2
       dayjs: 1.11.7
       form-data: 4.0.0
       https-proxy-agent: 5.0.1
