@@ -7,7 +7,7 @@ specifiers:
   eslint-config-prettier: 8.7.0
   eslint-plugin-prettier: 4.2.1
   express: '>=5.0.0-beta.1'
-  megalodon: 5.4.1
+  megalodon: 5.4.2
   morgan: 1.10.0
   nodemon: 2.0.21
   prettier: 2.8.5
@@ -17,7 +17,7 @@ dependencies:
   cors: 2.8.5
   ejs: 3.1.9
   express: 5.0.0-beta.1
-  megalodon: 5.4.1
+  megalodon: 5.4.2
   morgan: 1.10.0
   timeago.js: 4.0.2
 
@@ -944,8 +944,8 @@ packages:
     engines: {node: '>= 0.6'}
     dev: false
 
-  /megalodon/5.4.1:
-    resolution: {integrity: sha512-6UPbODxOFnZPChHEcoZvwTSjJaPmSMQWW40snBIT/YFxpcwH8Q8GfqYRIG46eAKl1PQCUI9gFpEvt9I+l9KKVA==}
+  /megalodon/5.4.2:
+    resolution: {integrity: sha512-jj8w38xtEwKXxxixb+i4x/VRiBuFNP0O6sKoJtgCXUJHWpixq2PRAwA7iOlprmxEq8GKAi+Lq8qEL0889klITg==}
     engines: {node: '>=15.0.0'}
     dependencies:
       '@types/oauth': 0.9.1
@@ -958,9 +958,9 @@ packages:
       object-assign-deep: 0.4.0
       parse-link-header: 2.0.0
       socks-proxy-agent: 7.0.0
-      typescript: 4.9.5
+      typescript: 5.0.2
       uuid: 9.0.0
-      ws: 8.12.1
+      ws: 8.13.0
     transitivePeerDependencies:
       - bufferutil
       - debug
@@ -1444,9 +1444,9 @@ packages:
       mime-types: 2.1.35
     dev: false
 
-  /typescript/4.9.5:
-    resolution: {integrity: sha512-1FXk9E2Hm+QzZQ7z+McJiHL4NW1F2EzMu9Nq9i3zAaGqibafqYwCVU6WyWAuyQRRzOlxou8xZSyXLEN8oKj24g==}
-    engines: {node: '>=4.2.0'}
+  /typescript/5.0.2:
+    resolution: {integrity: sha512-wVORMBGO/FAs/++blGNeAVdbNKtIh1rbBL2EyQ1+J9lClJ93KiiKe8PmFIVdXhHcyv44SL9oglmfeSsndo0jRw==}
+    engines: {node: '>=12.20'}
     hasBin: true
     dev: false
 
@@ -1497,8 +1497,8 @@ packages:
     resolution: {integrity: sha512-l4Sp/DRseor9wL6EvV2+TuQn63dMkPjZ/sp9XkghTEbV9KlPS1xUsZ3u7/IQO4wxtcFB4bgpQPRcR3QCvezPcQ==}
     dev: true
 
-  /ws/8.12.1:
-    resolution: {integrity: sha512-1qo+M9Ba+xNhPB+YTWUlK6M17brTut5EXbcBaMRN5pH5dFrXz7lzz1ChFSUq3bOUl8yEvSenhHmYUNJxFzdJew==}
+  /ws/8.13.0:
+    resolution: {integrity: sha512-x9vcZYTrFPC7aSIbj7sRCYo7L/Xb8Iy+pW0ng0wt2vCJv7M9HOMy0UoN3rr+IFC7hb7vXoqS+P9ktyLLLhO+LA==}
     engines: {node: '>=10.0.0'}
     peerDependencies:
       bufferutil: ^4.0.1
