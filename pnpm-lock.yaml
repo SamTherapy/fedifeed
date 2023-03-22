@@ -9,7 +9,7 @@ specifiers:
   express: '>=5.0.0-beta.1'
   megalodon: 5.4.2
   morgan: 1.10.0
-  nodemon: 2.0.21
+  nodemon: 2.0.22
   prettier: 2.8.6
   timeago.js: 4.0.2
 
@@ -25,7 +25,7 @@ devDependencies:
   eslint: 8.36.0
   eslint-config-prettier: 8.8.0_eslint@8.36.0
   eslint-plugin-prettier: 4.2.1_ose2zoovovx4ulolhifz3tfzx4
-  nodemon: 2.0.21
+  nodemon: 2.0.22
   prettier: 2.8.6
 
 packages:
@@ -1033,8 +1033,8 @@ packages:
     engines: {node: '>= 0.6'}
     dev: false
 
-  /nodemon/2.0.21:
-    resolution: {integrity: sha512-djN/n2549DUtY33S7o1djRCd7dEm0kBnj9c7S9XVXqRUbuggN1MZH/Nqa+5RFQr63Fbefq37nFXAE9VU86yL1A==}
+  /nodemon/2.0.22:
+    resolution: {integrity: sha512-B8YqaKMmyuCO7BowF1Z1/mkPqLk6cs/l63Ojtd6otKjMx47Dq1utxfRxcavH1I7VSaL8n5BUaoutadnsX3AAVQ==}
     engines: {node: '>=8.10.0'}
     hasBin: true
     dependencies:
