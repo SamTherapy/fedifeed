@@ -11,8 +11,8 @@ dependencies:
     specifier: '>=5.0.0-beta.1'
     version: 5.0.0-beta.1
   megalodon:
-    specifier: 5.4.3
-    version: 5.4.3
+    specifier: 5.4.4
+    version: 5.4.4
   morgan:
     specifier: 1.10.0
     version: 1.10.0
@@ -953,8 +953,8 @@ packages:
     engines: {node: '>= 0.6'}
     dev: false
 
-  /megalodon@5.4.3:
-    resolution: {integrity: sha512-HX60o3UNnzCm8ntRrOs82dPUz9lvTRtrO7Qg9/ZlSyisORR8VJJl3QAKKRvrXaNluAxEELY7yqJOh7574OkJHw==}
+  /megalodon@5.4.4:
+    resolution: {integrity: sha512-QZDrHGxfkc+ROiULIAxO1U8xHgYxtSGTUOZyIvxfHBamfreQ9jdAod0+VjS5U1O6CjSQ4ofpW7ABXuEh+UthxQ==}
     engines: {node: '>=15.0.0'}
     dependencies:
       '@types/oauth': 0.9.1
